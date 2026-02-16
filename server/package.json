@@ -1,6 +1,6 @@
 {
   "name": "@istiqlal/revit-agentic",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "MCP server for interacting with Autodesk Revit through AI assistants like Claude",
   "author": "Istiqlal",
   "main": "index.js",

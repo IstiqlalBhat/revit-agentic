@@ -1,18 +1,26 @@
-# @sparx-fire/mcp-servers-for-revit
+# @istiqlal/revit-agentic
+
+[![npm version](https://img.shields.io/npm/v/@istiqlal/revit-agentic)](https://www.npmjs.com/package/@istiqlal/revit-agentic)
 
 MCP server for interacting with Autodesk Revit through AI assistants like Claude.
 
-This package is the MCP server component of [mcp-servers-for-revit](https://github.com/sparx-fire/mcp-servers-for-revit). It exposes Revit operations as MCP tools that AI clients can call. The server communicates with the [Revit plugin](https://github.com/sparx-fire/mcp-servers-for-revit) over WebSocket to execute commands inside Revit.
+Created by **Istiqlal**
+
+This package is the MCP server component of [revit-agentic](https://github.com/IstiqlalBhat/revit-agentic). It exposes Revit operations as MCP tools that AI clients can call. The server communicates with the Revit plugin over WebSocket to execute commands inside Revit.
 
 > [!NOTE]
-> This server requires the mcp-servers-for-revit Revit plugin to be installed and running inside Revit. See the [full project README](https://github.com/sparx-fire/mcp-servers-for-revit) for setup instructions.
+> This server requires the revit-agentic Revit plugin to be installed and running inside Revit. See the [full project README](https://github.com/IstiqlalBhat/revit-agentic) for setup instructions.
 
 ## Setup
 
 **Claude Code**
 
 ```bash
-claude mcp add mcp-servers-for-revit -- npx -y @sparx-fire/mcp-servers-for-revit
+# Windows
+claude mcp add revit-agentic -- cmd /c npx @istiqlal/revit-agentic
+
+# macOS / Linux
+claude mcp add revit-agentic -- npx @istiqlal/revit-agentic
 ```
 
 **Claude Desktop**
@@ -22,9 +30,9 @@ Claude Desktop → Settings → Developer → Edit Config → `claude_desktop_co
 ```json
 {
     "mcpServers": {
-        "mcp-servers-for-revit": {
+        "revit-agentic": {
             "command": "npx",
-            "args": ["-y", "@sparx-fire/mcp-servers-for-revit"]
+            "args": ["@istiqlal/revit-agentic"]
         }
     }
 }
@@ -72,4 +80,4 @@ npm run build
 
 ## License
 
-[MIT](https://github.com/sparx-fire/mcp-servers-for-revit/blob/main/LICENSE)
+[MIT](https://github.com/IstiqlalBhat/revit-agentic/blob/main/LICENSE)
