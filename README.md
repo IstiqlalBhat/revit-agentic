@@ -1,12 +1,14 @@
 ![Cover Image](assets/cover.png)
 
-# MCP Servers for Revit
+# Revit Agentic
+
+[![npm version](https://img.shields.io/npm/v/@istiqlal/revit-agentic)](https://www.npmjs.com/package/@istiqlal/revit-agentic)
 
 **Connect AI assistants to Autodesk Revit via the Model Context Protocol.**
 
 Created by **Istiqlal**
 
-MCP Servers for Revit enables AI clients like Claude, Cline, and other MCP-compatible tools to read, create, modify, and delete elements in Revit projects. It consists of three components: a TypeScript MCP server that exposes tools to AI, a C# Revit add-in that bridges commands into Revit, and a command set that implements the actual Revit API operations.
+Revit Agentic enables AI clients like Claude, Cline, and other MCP-compatible tools to read, create, modify, and delete elements in Revit projects. It consists of three components: a TypeScript MCP server that exposes tools to AI, a C# Revit add-in that bridges commands into Revit, and a command set that implements the actual Revit API operations.
 
 ## Architecture
 
@@ -33,9 +35,14 @@ The **MCP Server** (TypeScript) translates tool calls from AI clients into WebSo
 
 ## Quick Start
 
-1. Download the ZIP for your Revit version from the Releases page (e.g., `mcp-servers-for-revit-v1.0.0-Revit2025.zip`)
+1. Install the MCP server via npm (no download needed):
+   ```bash
+   npx @istiqlal/revit-agentic
+   ```
 
-2. Extract the ZIP and copy the contents to your Revit addins folder:
+2. Download the Revit plugin ZIP for your version from the [Releases](https://github.com/IstiqlalBhat/revit-agentic/releases) page (e.g., `revit-agentic-v1.0.4-Revit2025.zip`)
+
+3. Extract the ZIP and copy the contents to your Revit addins folder:
    ```
    %AppData%\Autodesk\Revit\Addins\<your Revit version>\
    ```
@@ -44,7 +51,7 @@ The **MCP Server** (TypeScript) translates tool calls from AI clients into WebSo
    Addins/2025/
    ├── mcp-servers-for-revit.addin
    └── revit_mcp_plugin/
-       ├── revit-mcp-plugin.dll
+       ├── RevitMCPPlugin.dll
        ├── ...
        └── Commands/
            └── RevitMCPCommandSet/
@@ -54,18 +61,22 @@ The **MCP Server** (TypeScript) translates tool calls from AI clients into WebSo
                    └── ...
    ```
 
-3. Configure the MCP server in your AI client (see below)
+4. Configure the MCP server in your AI client (see below)
 
-4. Start Revit - the plugin loads automatically
+5. Start Revit - the plugin loads automatically
 
 ## MCP Server Setup
 
-The MCP server is published as an npm package and can be run directly with `npx`.
+The MCP server is published as an [npm package](https://www.npmjs.com/package/@istiqlal/revit-agentic) and can be run directly with `npx`.
 
 **Claude Code**
 
 ```bash
-claude mcp add revit-agentic -- npx -y @istiqlal/revit-agentic
+# Windows
+claude mcp add revit-agentic -- cmd /c npx @istiqlal/revit-agentic
+
+# macOS / Linux
+claude mcp add revit-agentic -- npx @istiqlal/revit-agentic
 ```
 
 **Claude Desktop**
@@ -77,7 +88,7 @@ Claude Desktop → Settings → Developer → Edit Config → `claude_desktop_co
     "mcpServers": {
         "revit-agentic": {
             "command": "npx",
-            "args": ["-y", "@istiqlal/revit-agentic"]
+            "args": ["@istiqlal/revit-agentic"]
         }
     }
 }
@@ -157,10 +168,10 @@ Building the solution automatically assembles the complete deployable layout in 
 ## Project Structure
 
 ```
-mcp-servers-for-revit/
+revit-agentic/
 ├── mcp-servers-for-revit.sln    # Combined solution (plugin + commandset)
 ├── command.json     # Command set manifest
-├── server/          # MCP server (TypeScript) - tools exposed to AI clients
+├── server/          # MCP server (TypeScript) - npm package @istiqlal/revit-agentic
 ├── plugin/          # Revit add-in (C#) - WebSocket bridge inside Revit
 ├── commandset/      # Command implementations (C#) - Revit API operations
 ├── assets/          # Images for documentation

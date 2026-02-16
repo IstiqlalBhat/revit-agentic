@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
   <AddIn Type="Application">
-    <Name>mcp-servers-for-revit</Name>
+    <Name>revit-agentic</Name>
     <Assembly>revit_mcp_plugin/RevitMCPPlugin.dll</Assembly>
     <FullClassName>revit_mcp_plugin.Core.Application</FullClassName>
-    <ClientId>090A4C8C-61DC-426D-87DF-E4BAE0F80EC1</ClientId>
-    <VendorId>mcp-servers-for-revit</VendorId>
-    <VendorDescription>https://github.com/sparx-fire/mcp-servers-for-revit</VendorDescription>
+    <ClientId>A343605A-11AB-4167-B751-0B78F66F9F2E</ClientId>
+    <VendorId>revit-agentic</VendorId>
+    <VendorDescription>https://github.com/IstiqlalBhat/revit-agentic</VendorDescription>
   </AddIn>
 </RevitAddIns>
