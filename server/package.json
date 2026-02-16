@@ -1,0 +1,55 @@
+{
+  "name": "@istiqlal/revit-agentic",
+  "version": "1.0.4",
+  "description": "MCP server for interacting with Autodesk Revit through AI assistants like Claude",
+  "author": "Istiqlal",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "revit-agentic": "./build/index.js"
+  },
+  "scripts": {
+    "clean": "rimraf build",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "build",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IstiqlalBhat/revit-agentic.git"
+  },
+  "keywords": [
+    "mcp",
+    "revit",
+    "autodesk",
+    "claude",
+    "ai",
+    "bim",
+    "architecture"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/IstiqlalBhat/revit-agentic/issues"
+  },
+  "homepage": "https://github.com/IstiqlalBhat/revit-agentic#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "better-sqlite3": "^11.7.0",
+    "ws": "^8.18.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.13.10",
+    "@types/ws": "^8.18.0",
+    "rimraf": "^5.0.10",
+    "typescript": "^5.8.2"
+  }
+}
